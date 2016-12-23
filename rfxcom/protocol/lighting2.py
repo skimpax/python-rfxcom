@@ -95,9 +95,9 @@ class Lighting2(BasePacketHandler):
 
             {
                 'id': "0x111F342",
-                'packet_length': 10,
+                'packet_length': 12,
                 'packet_type': 17,
-                'packet_type_name': 'Humidity sensors',
+                'packet_type_name': 'Lighting2 sensors',
                 'sequence_number': 19,
                 'packet_subtype': 0,
                 'packet_subtype_name': "AC",
