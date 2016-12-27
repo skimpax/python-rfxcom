@@ -25,6 +25,7 @@ COMMANDS = {
     0x1c: 'Program',
 }
 
+
 class Lighting3(BasePacketHandler):
     """The Lighting3 protocol is a 9 bytes packet used by a number of lighting
     systems. For example Lightwave devices use this protocol.
@@ -86,10 +87,9 @@ class Lighting3(BasePacketHandler):
         self.validate_packet(data)
 
         results = self.parse_header_part(data)
-        sub_type = results['packet_subtype']
 
         system = data[4]
-        channel = (data[5]<< 8) + data[6]
+        channel = (data[5] << 8) + data[6]
         command = data[7]
         command_text = COMMANDS.get(command)
 

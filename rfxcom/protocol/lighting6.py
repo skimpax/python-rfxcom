@@ -15,6 +15,7 @@ COMMANDS = {
     0x03: 'Group off',
 }
 
+
 class Lighting6(BasePacketHandler):
     """The Lighting6 protocol is a 12 bytes packet used by a number of lighting
     systems. For example Lightwave devices use this protocol.
@@ -82,9 +83,8 @@ class Lighting6(BasePacketHandler):
         self.validate_packet(data)
 
         results = self.parse_header_part(data)
-        sub_type = results['packet_subtype']
 
-        id_ = data[4] << 8 + data[5]
+        id_ = self.dump_hex(data[4:6])
         group_code = data[6]
         unit_code = data[7]
         cmd = data[8]

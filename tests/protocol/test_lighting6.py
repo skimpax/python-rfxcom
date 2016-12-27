@@ -10,7 +10,8 @@ class Lighting6TestCase(TestCase):
 
     def setUp(self):
 
-        self.data = bytearray(b'\x0B\x15\x00\x05\x01\x02\x03\x01\x02\x05\x06\x40')
+        self.data = bytearray(b'\x0B\x15\x00\x05\x01\x02\x03\x01'
+                              b'\x02\x05\x06\x40')
         self.parser = Lighting6()
 
     def test_parse_frame(self):
@@ -26,7 +27,7 @@ class Lighting6TestCase(TestCase):
             'packet_subtype': 0,
             'packet_subtype_name': "Blyss",
             'sequence_number': 5,
-            'id': 1024,
+            'id': '0x0102',
             'group_code': 3,
             'unit_code': 1,
             'command': 2,
@@ -35,7 +36,7 @@ class Lighting6TestCase(TestCase):
             'signal_level': 4
         })
 
-        self.assertEquals(str(self.parser), "<Lighting6 ID:1024>")
+        self.assertEquals(str(self.parser), "<Lighting6 ID:0x0102>")
 
     def test_validate_bytes_short(self):
 

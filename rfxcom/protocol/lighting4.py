@@ -25,6 +25,7 @@ COMMANDS = {
     0x1c: 'Program',
 }
 
+
 class Lighting4(BasePacketHandler):
     """The Lighting4 protocol is a 9 bytes packet used by a number of lighting
     systems. For example Lightwave devices use this protocol.
@@ -85,7 +86,6 @@ class Lighting4(BasePacketHandler):
         self.validate_packet(data)
 
         results = self.parse_header_part(data)
-        sub_type = results['packet_subtype']
 
         cmd = (data[4] << 16) + (data[5] << 8) + data[6]
         pulse = data[7] << 8 + data[8]
