@@ -7,12 +7,17 @@ Protocol Constants
 from .base import Packet
 from .elec import Elec
 from .humidity import Humidity
+from .lighting1 import Lighting1
 from .lighting2 import Lighting2
+from .lighting3 import Lighting3
+from .lighting4 import Lighting4
 from .lighting5 import Lighting5
+from .lighting6 import Lighting6
 from .rain import Rain
 from .status import Status
 from .temperature import Temperature
 from .temphumidity import TempHumidity
+from .temphumiditybaro import TempHumidityBaro
 from .ultraviolet import UltraViolet
 from .wind import Wind
 
@@ -34,12 +39,17 @@ MODE_PACKET = b'\x0D\x00\x00\x01\x03\x53\x00\x00\x0E\x2F\x00\x00\x00\x00'
 HANDLERS = [
     Elec,
     Humidity,
+    Lighting1,
     Lighting2,
+    Lighting3,
+    Lighting4,
     Lighting5,
+    Lighting6,
     Rain,
     Status,
     Temperature,
     TempHumidity,
+    TempHumidityBaro,
     UltraViolet,
     Wind,
     Packet,  # At the end as we should try it last.

@@ -42,7 +42,7 @@ class AsyncioTransport(BaseTransport):
         self.log.info("Writing the reset packet to the RFXtrx. (blocking)")
         yield from self.sendRESET()
 
-        self.log.info("Wating 0.4s")
+        self.log.info("Waiting 0.4s")
         yield from asyncio.sleep(0.4)
 
         self.log.info("Write the status packet (blocking)")
